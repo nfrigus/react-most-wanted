@@ -1,18 +1,10 @@
 import React from 'react'
-import Loadable from 'react-loadable'
 import getMenuItems from './menuItems'
-import LoadingComponent from 'rmw-shell/lib/components/LoadingComponent'
 import locales from './locales'
 import routes from './routes'
 import themes from './themes'
 import grants from './grants'
 
-const Loading = () => <LoadingComponent />
-
-const LPAsync = Loadable({
-  loader: () => import('../../src/pages/LandingPage'),
-  loading: Loading
-})
 
 const config = {
   firebase_config: {
@@ -46,7 +38,6 @@ const config = {
   routes,
   getMenuItems,
   firebaseLoad: () => import('./firebase'),
-  landingPage: LPAsync
 }
 
 export default config

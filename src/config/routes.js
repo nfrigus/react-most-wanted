@@ -2,6 +2,7 @@
 import React from 'react'
 import makeLoadable from 'rmw-shell/lib/containers/MyLoadable'
 import RestrictedRoute from 'rmw-shell/lib/containers/RestrictedRoute'
+import LandingPage from '../pages/LandingPage/LandingPage'
 
 const MyLoadable = (opts, preloadComponents) =>
   makeLoadable({ ...opts, firebase: () => import('./firebase') }, preloadComponents)
@@ -16,7 +17,7 @@ const AsyncDocument = MyLoadable({ loader: () => import('../pages/Document') })
 const AsyncCollection = MyLoadable({ loader: () => import('../pages/Collection') })
 
 const routes = [
-  <RestrictedRoute type="private" path="/" exact component={AsyncDashboard} />,
+  <RestrictedRoute type="public" path="/" exact component={LandingPage} />,
   <RestrictedRoute type="private" path="/dashboard" exact component={AsyncDashboard} />,
   <RestrictedRoute type="private" path="/about" exact component={AsyncAbout} />,
   <RestrictedRoute type="private" path="/companies" exact component={AsyncCompanies} />,
