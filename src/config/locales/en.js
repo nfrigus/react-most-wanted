@@ -145,7 +145,9 @@ const messages = defineMessages({
   document: 'Document',
   collection: 'Collection',
   infinitelist: 'Infinitelist',
-
+  deals: 'Deals',
+  'deals.remove.title': 'Remove deal?',
+  'deals.remove.message': 'The deal will be removed!',
 });
 
 export default messages;

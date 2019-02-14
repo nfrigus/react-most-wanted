@@ -90,6 +90,22 @@
       ".read": true,
       ".write": "auth != null"
     },
+    "deals": {
+      ".read": "auth != null",
+      ".indexOn": [
+        "userId"
+      ],
+      "$tid": {
+        ".indexOn": [
+          "userId"
+        ],
+        ".write": "data.child('userId').val() === auth.uid || newData.child('userId').val() === auth.uid"
+      }
+    },
+    "deals_count": {
+      ".read": true,
+      ".write": "auth != null"
+    },
     "companies": {
       ".read": "(auth != null && root.child('admins/'+auth.uid).exists()) || root.child('user_grants/'+auth.uid+'/read_companies').exists()",
       "$uid": {

@@ -88,6 +88,12 @@ const getMenuItems = props => {
       leftIcon: <DaschboardIcon />
     },
     {
+      value: '/deals',
+      visible: isAuthorised,
+      primaryText: intl.formatMessage({ id: 'deals' }),
+      leftIcon: <ListIcon />
+    },
+    {
       visible: isAuthorised,
       primaryText: intl.formatMessage({ id: 'chats' }),
       primaryTogglesNestedList: true,
